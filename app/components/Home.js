@@ -1,16 +1,11 @@
 import React from 'react';
 
-var Home = React.createClass({
-    render: function () {
-        return (
-            <div>
-                <h2 className="text-center">Search by Github Username Above</h2>
-                <div className="container">
-                    {this.props.children}
-                </div>
-            </div>
-        )
-    }
+const Home = React.createClass({
+  render() {
+    return (
+      <h2 className="text-center">Search by Username Above</h2>
+    );
+  }
 });
 
 export default Home;

@@ -1,11 +1,24 @@
 import React from 'react';
 
 var Main = React.createClass({
-    render: function () {
-        return (
-            <h1>Hello ReactJS!!</h1>
-        )
-    }
+  render() {
+    return (
+    <div>
+      <div className="main-container">
+        <nav className="navbar navbar-default" role="navigation">
+          <div className="col-sm-7 col-sm offset-2" style={{marginTop: 15}}>
+            Menu
+          </div>
+        </nav>
+      </div>
+      <div className="container">
+        <div className="row">
+          {this.props.children}
+        </div>
+      </div>
+    </div>
+    )
+  }
 });
 
 export default Main;
