@@ -10,10 +10,12 @@
   "author": "Kliment Petrov <kleopetroff@gmail.com> (http://kleopetrov.me)",
   "license": "ISC",
   "dependencies": {
+    "firebase": "^2.4.1",
+    "history": "latest",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.1",
-    "history": "latest"
+    "reactfire": "^0.6.0"
   },
   "devDependencies": {
     "babel-core": "^6.7.2",
