@@ -16,7 +16,7 @@ const Profile = React.createClass({
     return (
       <div className="row">
         <div className="col-md-4">
-          <UserProfile usename={this.props.params.username} bio={this.state.bio} />
+          <UserProfile username={this.props.params.username} bio={this.state.bio} />
         </div>
         <div className="col-md-4">
           <Repos repos={this.state.repos} />
