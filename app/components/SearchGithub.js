@@ -7,8 +7,8 @@ const SearchGithub = React.createClass({
   setRef(ref) {
     this.usernameRef = ref;
   },
-  handleSubmit() {
-    console.log(this.context.router);
+  handleSubmit(e) {
+    e.preventDefault();
     const username = this.usernameRef.value;
     this.usernameRef.value = '';
     this.context.router.push('/profile/' + username)
