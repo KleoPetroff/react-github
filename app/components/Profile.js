@@ -3,8 +3,9 @@ import React from 'react';
 import UserProfile from './github/UserProfile';
 import Repos from './github/Repos';
 import Notes from './notes/Notes';
-var ReactFireMixin = require('reactfire');
-var Firebase = require('firebase');
+import ReactFireMixin from 'reactfire';
+import Firebase from 'firebase';
+import helpers from '../utils/helpers';
 
 const Profile = React.createClass({
   mixins: [ReactFireMixin],
@@ -15,10 +16,18 @@ const Profile = React.createClass({
       repos: []
     };
   },
-  componentDidMount() {
+  componentWillMount() {
     this.ref = new Firebase('https://react-github.firebaseio.com/');
     let childRef = this.ref.child(this.props.params.username);
     this.bindAsArray(childRef, 'notes');
+
+    helpers.getGithubInfo(this.props.params.username)
+      .then(function (data) {
+        this.setState({
+          bio: data.bio,
+          repos: data.repos
+        })
+      }.bind(this));
   },
   componentWillUnmount() {
     this.unbind('notes');
